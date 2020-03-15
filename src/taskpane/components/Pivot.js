@@ -8,6 +8,7 @@ import {
 import Hello from './Hello';
 import Experience from './Experience';
 import Skills from './Skills';
+import Socials from './Socials';
 
 export default class PivotBasicExample extends React.Component {
   render() {
@@ -24,6 +25,7 @@ export default class PivotBasicExample extends React.Component {
                 <Skills></Skills>
             </PivotItem>
             <PivotItem linkText='Socials'>
+                <Socials></Socials>
             </PivotItem>
         </Pivot>
       </div>

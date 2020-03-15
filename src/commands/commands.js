@@ -12,10 +12,6 @@ Office.onReady(() => {
     console.log("Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.");
   }
 
-  // Assign event handlers and other initialization logic.
-  document.getElementById("insert-paragraph").onclick = insertParagraph;
-  document.getElementById("apply-style").onclick = applyStyle;
-
 });
 
 function insertParagraph() {

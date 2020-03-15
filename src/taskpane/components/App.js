@@ -1,6 +1,5 @@
 import * as React from "react";
 import Pivot from "./Pivot";
-
 /* global Button Header, HeroList, HeroListItem, Progress, Word */
 
 export default class App extends React.Component {
