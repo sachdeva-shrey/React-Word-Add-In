@@ -80,6 +80,27 @@ b {
 }
 
 .pivot-style {
-    background-color: #f3f2f1
-    ;
+    background-color: #f3f2f1;
+    height: 100vh;
 }
+
+#apply-style {
+    margin-left: 20px;
+}
+
+.experience-wrapper {
+    margin-left: 20px;
+    display: flex;
+}
+
+.experience {
+    margin-left: 20px;
+}
+
+.timeline {
+    height: 70vh;
+    width: 5px;
+    margin-top: 20px;
+    background-color: #005a9e;
+}
+

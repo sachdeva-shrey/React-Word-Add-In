@@ -6,24 +6,24 @@ import {
 } from 'office-ui-fabric-react';
 
 import Hello from './Hello';
+import Experience from './Experience';
+import Skills from './Skills';
 
 export default class PivotBasicExample extends React.Component {
   render() {
     return (
       <div>
         <Pivot className="pivot-style">
-        <PivotItem linkText='Main'>
-              <Label>Main</Label>
-              <Hello></Hello>
+            <PivotItem linkText='Main'>
+                <Hello></Hello>
             </PivotItem>
             <PivotItem linkText='Experience'>
-              <Label>Experience</Label>
+                <Experience></Experience>
             </PivotItem>
             <PivotItem linkText='Skills'>
-              <Label>Skills</Label>
+                <Skills></Skills>
             </PivotItem>
             <PivotItem linkText='Socials'>
-              <Label>Socials</Label>
             </PivotItem>
         </Pivot>
       </div>

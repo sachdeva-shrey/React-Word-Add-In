@@ -1,8 +1,6 @@
 import * as React from "react";
 import Header from "./Header";
-import { PrimaryButton, Button, ButtonType } from "office-ui-fabric-react";
-import HeroList, { HeroListItem } from "./HeroList";
-import Progress from "./Progress";
+import { PrimaryButton } from "office-ui-fabric-react";
 
 export default class Hello extends React.Component {
     constructor(props, context) {
@@ -12,7 +10,17 @@ export default class Hello extends React.Component {
         };
       }
     
-    
+      writeContent = () => {
+        var myOOXMLRequest = new XMLHttpRequest();
+        var myXML;
+        myOOXMLRequest.open('GET', '../../myDoc.xml', false);
+        myOOXMLRequest.send();
+        if (myOOXMLRequest.status === 200) {
+            myXML = myOOXMLRequest.responseText;
+        }
+        Office.context.document.setSelectedDataAsync(myXML, { coercionType: 'ooxml' });
+    }
+
       insertParagraph = async () => {
         return Word.run(async context => {
           const paragraph = context.document.body.insertParagraph("Hello World", Word.InsertLocation.end);
@@ -43,8 +51,8 @@ export default class Hello extends React.Component {
         return(
             <div>
                 <Header logo="../../../assets/shrey-sachdeva.jpg" title={this.props.title} message="Hi, I'm Shrey Sachdeva" />
-                <PrimaryButton onClick={this.insertParagraph} classID="apply-style" className="ms-Button">Insert Portfolio</PrimaryButton>
-                <PrimaryButton onClick={this.changeName} classID="apply-style" className="ms-Button">Change name</PrimaryButton>
+                <PrimaryButton onClick={this.writeContent} id="apply-style" className="ms-Button">Insert Portfolio</PrimaryButton>
+                <PrimaryButton onClick={this.changeName} id="apply-style" className="ms-Button">Change name</PrimaryButton>
             </div>
         )
     }
