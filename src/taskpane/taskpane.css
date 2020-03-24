@@ -104,3 +104,23 @@ b {
     background-color: #005a9e;
 }
 
+.input {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.add-btn {
+    display: block;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.remove-btn {
+    margin-right: 20px;
+}
+
+.field-input {
+    display: flex;
+    margin-bottom: 20px;
+}
