@@ -1,74 +1,3 @@
-// import React, { useState } from "react";
-// import ReactDOM from "react-dom";
-
-// import { TextField, PrimaryButton } from 'office-ui-fabric-react'
-
-// // function Socials () {
-
-// //     // handleChange = async () => {
-// //     //     return Word.run(async context => {
-// //     //         context.document.body.insertParagraph("Hello", "End")
-// //     //         await context.sync();
-// //     //     })
-// //     // }
-
-// function Socials () {
-//     const [fields, setFields] = useState([{ value: null }]);
-
-//     function handleChange(i, event) {
-//       const values = [...fields];
-//       values[i].value = event.target.value;
-//       setFields(values);
-//       global const val = event.target.value;
-//     }
-
-//     const insertParagraph = async ()  => {
-//         Word.run(async (context) => {
-//             context.document.body.insertParagraph(value, "End")
-//             return await context.sync()
-//         })
-//     }
-
-//     function handleAdd() {
-//       const values = [...fields];
-//       values.push({ value: null });
-//       setFields(values);
-//     }
-
-//     function handleRemove(i) {
-//       const values = [...fields];
-//       values.splice(i, 1);
-//       setFields(values);
-//     }
-
-//     return (
-//       <div>
-//         <PrimaryButton className="add-btn" onClick={() => handleAdd()}>
-//         Add
-//         </PrimaryButton>
-
-//         {fields.map((field, idx) => {
-//           return (
-//             <div key={`${field}-${idx}`} className="field-input">
-//             <form>
-//               <TextField
-//                 className="input"
-//                 value={field.value}
-//                 placeholder="Enter text"
-//                 name={'input'}
-//               />
-//               </form>
-//               <PrimaryButton className="remove-btn" onClick={() => handleRemove(idx)}>
-//               Remove
-//               </PrimaryButton>
-//             </div>
-//           );
-//         })}
-//         <PrimaryButton >Save</PrimaryButton>
-//       </div>
-//     );
-//   };
-
 import React, { useState, Fragment } from "react";
 import { TextField, PrimaryButton } from 'office-ui-fabric-react'
 
@@ -104,8 +33,6 @@ const Socials = () => {
             i++;
 
         }
-        // for(const key of keys) {
-        // }        
         return await context.sync();
     })
   };
