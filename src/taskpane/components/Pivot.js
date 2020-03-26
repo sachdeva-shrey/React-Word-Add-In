@@ -18,15 +18,15 @@ export default class PivotBasicExample extends React.Component {
             <PivotItem linkText='Main'>
                 <Hello></Hello>
             </PivotItem>
+            <PivotItem linkText='Add Socials'>
+                <Socials></Socials>
+            </PivotItem>
             <PivotItem linkText='Experience'>
                 <Experience></Experience>
             </PivotItem>
-            <PivotItem linkText='Skills'>
+            {/* <PivotItem linkText='Skills'>
                 <Skills></Skills>
-            </PivotItem>
-            <PivotItem linkText='Socials'>
-                <Socials></Socials>
-            </PivotItem>
+            </PivotItem> */}
         </Pivot>
       </div>
     );

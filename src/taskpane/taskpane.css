@@ -124,3 +124,28 @@ b {
     display: flex;
     margin-bottom: 20px;
 }
+
+label {
+    margin-left: 20px;
+}
+
+.btn {
+    margin-left: 55px;
+}
+
+.center {
+    margin-left: 120px;
+    margin-top: 50px;
+}
+
+form {
+    overflow-x: auto;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+/* .form-group {
+    display: flex;
+} */

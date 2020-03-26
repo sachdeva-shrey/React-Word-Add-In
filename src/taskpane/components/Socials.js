@@ -2,11 +2,11 @@ import React, { useState, Fragment } from "react";
 import { TextField, PrimaryButton } from 'office-ui-fabric-react'
 
 const Socials = () => {
-  const [inputFields, setInputFields] = useState([{ firstName: "" }]);
+  const [inputFields, setInputFields] = useState([{ Social: "" }]);
 
   const handleAddFields = () => {
     const values = [...inputFields];
-    values.push({ firstName: "" });
+    values.push({ Social: "" });
     setInputFields(values);
   };
 
@@ -18,56 +18,63 @@ const Socials = () => {
 
   const handleInputChange = (index, event) => {
     const values = [...inputFields];
-    values[index].firstName = event.target.value; 
+    values[index].Social = event.target.value; 
     setInputFields(values);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     return Word.run(async (context) => {
+      context.document.body.insertParagraph(" ", "End")
+      var social = context.document.body.insertParagraph("Socials", Word.InsertLocation.end);
+        social.font.set({ size: 13.5, bold: true })
         const len = Object.keys(inputFields).length;
         let i = 0;
         while (i !== len) {
-            let str = inputFields[i].firstName;
-            context.document.body.insertText(str, "End")
+            let str = inputFields[i].Social;
+            let links = context.document.body.insertParagraph(`${i+1}.${str}`, "End")
+            links.font.set({ size: 15, color: 'black', bold: false })
             i++;
-
         }
-        return await context.sync();
+        await context.sync();
     })
   };
 
   return (
     <>
-      <h1>Dynamic Form Fields in React</h1>
+      <h1>Link your socials</h1>
+      <p>GitHub, LinkedIn, Dribbble and more!</p>
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           {inputFields.map((inputField, index) => (
             <Fragment key={`${inputField}~${index}`}>
               <div className="form-group">
-                <label htmlFor="firstName">First Name</label>
                 <TextField
                   type="text"
                   className="form-control"
-                  id="firstName"
-                  name="firstName"
-                  value={inputField.firstName}
+                  id="Social"
+                  className="input"
+                  name="Social"
+                  placeholder="Enter Link"
+                  value={inputField.Social}
                   onChange={event => handleInputChange(index, event)}
                 />
               </div>
               <div className="form-group">
-                <PrimaryButton type="button" onClick={() => handleRemoveFields(index)}>
-                  -
-                </PrimaryButton>
-                <PrimaryButton type="button" onClick={() => handleAddFields()}>
-                  +
-                </PrimaryButton>
+                <div>
+                  <PrimaryButton className="btn" type="button" onClick={() => handleRemoveFields(index)}>
+                    -
+                  </PrimaryButton>
+                  <PrimaryButton className="btn" type="button" onClick={() => handleAddFields()}>
+                    +
+                  </PrimaryButton>
+                </div>
               </div>
             </Fragment>
           ))}
         </div>
         <div className="submit-button">
-          <PrimaryButton type="submit" onSubmit={handleSubmit}>
+          <PrimaryButton className="center" type="submit" onSubmit={handleSubmit}>
             Save
           </PrimaryButton>
         </div>
