@@ -25,7 +25,7 @@ const Socials = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     return Word.run(async (context) => {
-      context.document.body.insertParagraph(" ", "End")
+
       var social = context.document.body.insertParagraph("Socials", Word.InsertLocation.end);
         social.font.set({ size: 13.5, bold: true })
         const len = Object.keys(inputFields).length;
@@ -33,7 +33,7 @@ const Socials = () => {
         while (i !== len) {
             let str = inputFields[i].Social;
             let links = context.document.body.insertParagraph(`${i+1}.${str}`, "End")
-            links.font.set({ size: 15, color: 'black', bold: false })
+            links.font.set({ size: 11, color: 'black', bold: false })
             i++;
         }
         await context.sync();
