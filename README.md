@@ -10,3 +10,7 @@
 2. Open a Node.js command prompt in the root folder of the project.
 3. Run npm install to install all dependencies.
 5. Open Word and sideload the manifest.
+
+
+## Preview 📺
+![Screenshot](./assets/screenshot.png)
