@@ -11,6 +11,5 @@
 3. Run npm install to install all dependencies.
 5. Open Word and sideload the manifest.
 
-
 ## Preview 📺
-![Screenshot](./assets/screenshot.png)
+<img alt="screenshot" src="./assets/screenshot.PNG">
